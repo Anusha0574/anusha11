@@ -1,0 +1,28 @@
+MASTER:
+sudo apt-get update
+sudo apt-get install software-properties-common 
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt update
+sudo apt install ansible
+
+SLAVE:
+sudo apt update
+sudo apt-get install python3
+sudo apt-get install python
+
+MASTER:
+cd .ssh
+ls
+cat authorized_keys
+ssh-keygen
+ls
+cat id_rsa.pub
+
+SLAVE:
+cd .ssh
+ls
+sudo nano authorized_keys
+
+MASTER:
+sudo nano /etc/ansible/hosts
+ansible -m ping all
